@@ -1,0 +1,5 @@
+example.com
+dude.example.com
+vpn.example.com
+wow.this.does.not.exist.example.com
+google.com
