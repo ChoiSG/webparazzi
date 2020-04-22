@@ -166,10 +166,13 @@ async def main():
             
             # Create valid url list and broken url list from the return value of findSchema function
             for future in futures:
-                if "[-]" in future.result():
-                    brokenList.append(future.result().split("[-] ")[1])
-                else:
-                    finalList.append(future.result())
+                try:
+                    if "[-]" in future.result():
+                        brokenList.append(future.result().split("[-] ")[1])
+                    else:
+                        finalList.append(future.result())
+                except Exception as e:
+                    continue
 
     else:
         print("[DEBUG] for now, exit upon no filename input from the user")
